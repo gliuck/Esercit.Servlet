@@ -3,7 +3,7 @@
     Created on : Apr 15, 2019, 10:21:04 AM
     Author     : bardoz
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <!-- aggiungo questa libreria -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
@@ -29,7 +29,7 @@ and open the template in the editor.
         <!-- Include navbar here -->
         <jsp:include page="nav.jsp"/>
 
-        <div id="main_content">
+        <div id="main_content"> <!-- questo div contiene gli articoli, e voglio usare slide 75-->
             <aside>
                 <div>
                     <ol>

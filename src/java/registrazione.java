@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;/*aggiungere questo*/
 
 /**
  *
@@ -30,6 +30,10 @@ public class registrazione extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+         /*try (PrintWriter out = response.getWriter())*/  /* print write scrive la risposta*/
+        
+        /*voglio leggere la richiesta, e controllo che getparameter non sia null , get parameter restituisce ad esempio se ho una
+        stringa, restituisce una stringa*/
 
 
         String username = (String) request.getParameter("userName");
@@ -37,17 +41,20 @@ public class registrazione extends HttpServlet {
         if (session.getAttribute("loggedIn") != null){
             request.getRequestDispatcher("Profilo").forward(request, response);
         }
-        else if (username != null) {
-            System.out.println(username);
-            if (username.equals("admin")) {
+        else if (username != null) { /*se l'username non è null*/
+            System.out.println(username); /*se è username allora stampa*/
+            if (username.equals("admin")) { /* se è admin allora lancia questo*/
                 session.setAttribute("loggedIn", true);
                 request.getRequestDispatcher("Profilo").forward(request, response);
+                /*se non è admin allora*/
+                
             } else {
                 request.getRequestDispatcher("registrazione.jsp").forward(request, response);
             }
         } else {
             request.getRequestDispatcher("registrazione.jsp").forward(request, response);
-        }
+        } /* richiesta intera, foreordando la richeiseta
+           */
 
     }
 

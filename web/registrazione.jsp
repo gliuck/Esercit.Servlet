@@ -4,7 +4,7 @@
     Author     : bardoz
 --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!-- aggiungo questa libreria -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
@@ -30,7 +30,7 @@ and open the template in the editor.
         <!-- Include navbar here -->
         <jsp:include page="nav.jsp"/>
 
-        <div id="main_content">
+        <div id="main_content"> <!-- questo div contiene gli articoli, e voglio usare slide 75-->
             <aside>
                 <div>
                     <ol>
@@ -44,8 +44,22 @@ and open the template in the editor.
 
             <main>
                 <form action="registrazione" method="post">
+                    <!--devo far arrivare la richiesta form alla SERVLET!!!
+                per adesso la richiesta arriva in index.html, è lui che gestisce questa richiesta, dobbiamo mandarlo
+                a qualcosa si aprire la richiesta hhtp, cambio index.html, con "registrazione" -->
+                
+                
+                <!--  jstl, condizione a un pezzo html, voglio nella pagina registrazione.jsp, se vi arrivo premendo submit,
+                 voglio arrivarci submit,la tag if prende l' attributo test., quindi se test è true, allora 
+                   il parametro c'è (il nostro paramentro è username, e voglio controllare se cè)
+                -->
 
                     <c:if test="${param[\"userName\"] != null}">
+                        <!--attenzioni doppi apici, non va bene devo mettere
+                    \  \ per risolvere e far capire al programma che è roba interna-->
+                    
+                    <!-- -->
+                    
 
                         <p>Lo username inserito è ${param["userName"]}</p>
 
@@ -93,3 +107,4 @@ and open the template in the editor.
     </body>
 </html>
 
+<!--float = attaccare ad esempio  tutto a sx -->
