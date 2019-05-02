@@ -9,6 +9,7 @@
         <servlet-class>Profilo</servlet-class>
     </servlet>
     <servlet-mapping>
+        <!--mappa questa servlet,  -->
         <servlet-name>registrazione</servlet-name>
         <url-pattern>/registrazione</url-pattern>
     </servlet-mapping>
@@ -22,8 +23,9 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+        <!-- lista dei file, index html, -->
         <welcome-file>
-           registrazione 
+           registrazione <!--non ho più registrazione.html, quindi devo modificarlo, per poter intercettare le richieste scrivo solo registrazione-->
         </welcome-file>
     </welcome-file-list>
 </web-app>
